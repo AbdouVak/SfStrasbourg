@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EntrepriseController!{% endblock %}
+
+{% block body %}
+    <h1>Liste des entreprise</h1>
+    {% for entreprise in entreprises %}
+        <a href="{{ path('show_entreprise',{'id': entreprise.id}) }}">{{entreprise}}</a><br>
+    {% endfor %}
+
+{% endblock %}
