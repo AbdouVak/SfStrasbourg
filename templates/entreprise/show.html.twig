@@ -5,7 +5,17 @@
 {% block body %}
     <h1>{{entreprise}}</h1>
     <p>
-       Date de création : {{ entreprise.dateCreation | date('d-m-Y') }}
+       Date de création : {{ entreprise.dateCreation | date('d-m-Y') }}<br>
        Ville : {{ entreprise.fullAdresse }}
     </p>
+
+    <h2>Liste des employé</h2>
+    {% if entreprise.employe | length == 0 %}
+        <p>Pas d'employé dans cette entreprise</p>
+    {% else %}
+        {% for employe in entreprise.employe %}
+        <a href="{{ path('show_employe',{'id': employe.id}) }}">{{ employe }}</a> <br>
+        {% endfor %}
+    {% endif %}
+
 {% endblock %}
