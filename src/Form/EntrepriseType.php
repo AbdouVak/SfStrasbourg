@@ -19,7 +19,7 @@ class EntrepriseType extends AbstractType
                 'attr' => ['class' => 'form-control']
             ])
 
-            ->add('dateCreation',DateType::class, [
+            ->add('dateCreation', DateType::class, [
                 'widget' =>'single_text',
                 'attr' => ['class' => 'form-control']
             ])
