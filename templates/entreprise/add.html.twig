@@ -3,7 +3,12 @@
 {% block title %}Ajouter entreprise{% endblock %}
 
 {% block body %}
-    <h1>ajouter entreprise</h1>
+    {% if edit %}
+        <h1>Editer nom d'entreprises</h1>
+    {% else %}
+        <h1>Ajouter une entreprise</h1>
+    {% endif %}
+
     {{ form(formAddEntreprise) }}
 
 {% endblock %}
